@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from robots.views import robot_api
+from robots import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/robots/', robot_api, name='robot-api'),
+    path('download/excel/', views.generate_excel, name='generate_excel'),
 ]
